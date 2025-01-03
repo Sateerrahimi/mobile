@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Management</title>
+  <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+      th { background-color: #f2f2f2; }
+      form { margin-bottom: 20px; }
+      label { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Mobile Management</h1>
+  <form id="mobileForm" enctype="multipart/form-data">
+  <label>ID: <input type="text" id="mobileId" disabled></label>
+    <label>Brand: <input type="text" id="mobileBrand"></label>
+    <label>Model: <input type="text" id="mobileModel"></label>
+    <label>Price: <input type="text" id="mobilePrice"></label>
+    <label>Currency: <input type="text" id="mobileCurrency"></label>
+    <label>Stock: <input type="text" id="mobileStock"></label>
+    <label>Image: <input type="file" id="mobileImage" accept="image/*"></label>
+
+    <button type="submit">Save Mobile</button>
+  </form>
+
+  <button onclick="loadMobiles()">Load Mobiles</button>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Price</th>
+      <th>Currency</th>
+      <th>Stock</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="mobileTable">
+    <!-- Mobile rows will go here -->
+    </tbody>
+  </table>
+  <script src="app.js"></script>
+</body>
+</html>

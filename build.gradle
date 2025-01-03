@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.0'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.postgresql:postgresql:42.6.0'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'commons-fileupload:commons-fileupload:1.4'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+
+    // JUnit Jupiter API and Engine
+    //testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'  // Specify the JUnit version
+
+
+    // Spring Boot Test Starter
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Mockito for mocking
+    //testImplementation 'org.mockito:mockito-core:3.x'
+    testImplementation('org.mockito:mockito-core')
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// Ensure that you use the JUnit platform for running your tests
+test {
+    useJUnitPlatform()
+}
