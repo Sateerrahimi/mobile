@@ -19,7 +19,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '17' # or your project’s Java version
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Cache Gradle
@@ -32,6 +32,10 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+        env:
+          SPRING_PROFILES_ACTIVE: test  # Activates the test profile during build
 
       - name: Run Tests
         run: ./gradlew test
+        env:
+          SPRING_PROFILES_ACTIVE: test  # Ensures tests use the test profile
