@@ -13,6 +13,7 @@ public class Mobile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    String haroon;
 
     @Column(nullable = false)
     private String brand;
